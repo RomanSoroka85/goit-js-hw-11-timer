@@ -1,2 +1,1 @@
-# goit-js-hw-11-timer
-module11
+# initial-repository
