@@ -89,12 +89,16 @@ class Timer {
     }
   }
 
+  updateDate() {
+    let currentTime = Date.now();
+    this.deltaTime = Date.parse(this.stopTime) - currentTime;
+    this.updateClockFace(this.deltaTime);
+  }
+
   start() {
     this.interval = setInterval(() => {
-      let currentTime = Date.now();
-      this.deltaTime = Date.parse(this.stopTime) - currentTime;
-      this.updateClockFace(this.deltaTime);
-    }, 0);
+      this.updateDate();
+    }, 1000);
   }
   stop() {
     clearInterval(this.interval);
@@ -103,13 +107,5 @@ class Timer {
 }
 
 const timer = new Timer("1 sept 2020 13:54:46", "31 dec 2020 03:05:15");
-// console.log(timer);
-// refs.startBtn.addEventListener("click", () => {
-//   timer.start();
-// });
-
-// refs.stopBtn.addEventListener("click", () => {
-//   timer.stop();
-// });
-
+timer.updateDate();
 timer.start();
