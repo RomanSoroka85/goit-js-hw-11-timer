@@ -29,10 +29,10 @@ import css from "./css/style.css";
 //  * миллисекунд в одной секунде (1000)
 //  */
 // const secs = Math.floor((time % (1000 * 60)) / 1000);
-console.dir(Date);
-console.log(Date.now());
-console.log(Date.parse("Oct 1 900"));
-console.log(Date.parse("Oct 1 2020"));
+// console.dir(Date);
+// console.log(Date.now());
+// console.log(Date.parse("Oct 1 900"));
+// console.log(Date.parse("Oct 1 2020"));
 
 const refs = {
   //   days: document.getElementById("days"),
@@ -46,7 +46,7 @@ const refs = {
   //   startBtn: document.querySelector('[data-action="start"]'),
   //   stopBtn: document.querySelector('[data-action="stop"]'),
 };
-console.log(refs.days);
+// console.log(refs.days);
 class Timer {
   constructor(startTime, stopTime) {
     this.startTime = startTime;
@@ -94,7 +94,7 @@ class Timer {
       let currentTime = Date.now();
       this.deltaTime = Date.parse(this.stopTime) - currentTime;
       this.updateClockFace(this.deltaTime);
-    }, 1000);
+    }, 0);
   }
   stop() {
     clearInterval(this.interval);
@@ -102,8 +102,8 @@ class Timer {
   }
 }
 
-const timer = new Timer("1 sept 2020 13:54:46", "12 nov 2020 03:05:15");
-console.log(timer);
+const timer = new Timer("1 sept 2020 13:54:46", "31 dec 2020 03:05:15");
+// console.log(timer);
 // refs.startBtn.addEventListener("click", () => {
 //   timer.start();
 // });
@@ -111,4 +111,5 @@ console.log(timer);
 // refs.stopBtn.addEventListener("click", () => {
 //   timer.stop();
 // });
+
 timer.start();
